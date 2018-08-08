@@ -68,6 +68,7 @@ func (b BaseDeploymentGenerator) structuredGenerate() (
 	return
 }
 
+// TODO reuse pod's build
 // buildPodSpec: parse the image strings and assemble them into the Containers
 // of a PodSpec. This is all you need to create the PodSpec for a deployment.
 func buildPodSpec(images []string) v1.PodSpec {

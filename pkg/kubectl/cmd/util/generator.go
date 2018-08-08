@@ -51,6 +51,7 @@ const (
 	DeploymentBasicV1Beta1GeneratorName     = "deployment-basic/v1beta1"
 	DeploymentBasicAppsV1Beta1GeneratorName = "deployment-basic/apps.v1beta1"
 	DeploymentBasicAppsV1GeneratorName      = "deployment-basic/apps.v1"
+	PodV1GeneratorName                      = "pod/v1"
 	JobV1GeneratorName                      = "job/v1"
 	CronJobV2Alpha1GeneratorName            = "cronjob/v2alpha1"
 	CronJobV1Beta1GeneratorName             = "cronjob/v1beta1"
@@ -112,6 +113,11 @@ func defaultGenerators(cmdName string) map[string]kubectl.Generator {
 			CronJobV2Alpha1GeneratorName:       kubectl.CronJobV2Alpha1{},
 			CronJobV1Beta1GeneratorName:        kubectl.CronJobV1Beta1{},
 		}
+	case "pod":
+		// TODO https://github.com/kubernetes/kubernetes/pull/49223
+		// StructuredGenerators seem like the new way to do stuff
+		generator = map[string]kubectl.Generator{}
+
 	case "namespace":
 		generator = map[string]kubectl.Generator{
 			NamespaceV1GeneratorName: kubectl.NamespaceGeneratorV1{},

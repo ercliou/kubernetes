@@ -134,6 +134,7 @@ func NewCmdCreate(f cmdutil.Factory, ioStreams genericclioptions.IOStreams) *cob
 	cmd.AddCommand(NewCmdCreateServiceAccount(f, ioStreams))
 	cmd.AddCommand(NewCmdCreateService(f, ioStreams))
 	cmd.AddCommand(NewCmdCreateDeployment(f, ioStreams))
+	cmd.AddCommand(NewCmdCreatePod(f, ioStreams))
 	cmd.AddCommand(NewCmdCreateClusterRole(f, ioStreams))
 	cmd.AddCommand(NewCmdCreateClusterRoleBinding(f, ioStreams))
 	cmd.AddCommand(NewCmdCreateRole(f, ioStreams))
